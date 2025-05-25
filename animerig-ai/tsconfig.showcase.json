@@ -1,0 +1,28 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "strict": false
+  },
+  "include": [
+    "src/main.showcase.tsx",
+    "src/app/App.showcase.tsx", 
+    "src/app/components/VisualDemoLayout.tsx",
+    "src/app/components/CharacterCanvas.demo.tsx",
+    "src/app/components/CharacterGenerationModal.tsx",
+    "src/app/utils/**/*",
+    "src/engine/types.ts"
+  ],
+  "exclude": [
+    "src/app/App.tsx",
+    "src/backend/**/*",
+    "src/ai/**/*",
+    "src/engine/animation/**/*",
+    "src/engine/physics/**/*",
+    "src/engine/rendering/**/*",
+    "src/features/**/*",
+    "node_modules"
+  ]
+}

@@ -1,0 +1,86 @@
+=== AnimeRig AI GUI Test Report ===
+Test Date: 2025-05-25 10:46:35
+Total Tests: 7
+
+✅ Passed: 7
+❌ Failed: 0
+📊 Success Rate: 100.0%
+
+
+==================================================
+Test: test_application_import
+Status: ✅ PASSED
+Details:
+  - MainWindow imported: True
+  - Config imported: True
+  - App name: AnimeRig AI
+  - App version: 1.0.0
+
+==================================================
+Test: test_window_creation
+Status: ✅ PASSED
+Details:
+  - Window created: True
+  - Window type: MainWindow
+  - Has viewport: True
+  - Has chat widget: True
+  - Has control panel: True
+
+==================================================
+Test: test_window_display
+Status: ✅ PASSED
+Details:
+  - Window visible: True
+  - Window size > 0: True
+  - Window title set: True
+  - Window is active: True
+
+==================================================
+Test: test_components_initialization
+Status: ✅ PASSED
+Details:
+  - Character Viewport exists: True
+  - Character Viewport visible: True
+  - Character Viewport enabled: True
+  - Chat Widget exists: True
+  - Chat Widget visible: False
+  - Chat Widget enabled: True
+  - Control Panel exists: True
+  - Control Panel visible: True
+  - Control Panel enabled: True
+  - Progress Bar exists: True
+  - Progress Bar visible: False
+  - Progress Bar enabled: True
+  - Status Label exists: True
+  - Status Label visible: True
+  - Status Label enabled: True
+
+==================================================
+Test: test_backend_connectivity
+Status: ✅ PASSED
+Details:
+  - Backend connection test run: True
+  - Backend connected: None
+  - Backend URL: Unknown
+
+==================================================
+Test: test_control_interactions
+Status: ✅ PASSED
+Details:
+  - Control panel accessible: True
+  - Emotion sliders: 5
+  - Happy slider: True
+  - Sad slider: True
+  - Angry slider: True
+  - Surprised slider: True
+  - Neutral slider: True
+
+==================================================
+Test: test_screenshot_capture
+Status: ✅ PASSED
+Details:
+  - Screenshot capture method called: True
+  - Screenshot directory created: True
+  - GUI state log created: True
+  - Screenshot directory: verification_results/screenshots
+  - Note: In offscreen mode, actual screenshot files may not be generated

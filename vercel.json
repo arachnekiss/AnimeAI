@@ -1,0 +1,15 @@
+{
+  "buildCommand": "npm run build:showcase",
+  "outputDirectory": "dist-showcase",
+  "framework": "vite",
+  "installCommand": "npm install",
+  "devCommand": "npm run showcase",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/index.showcase.html"
+    }
+  ]
+}

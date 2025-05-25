@@ -1,0 +1,34 @@
+=== AnimeRig AI GUI State Report ===
+
+Timestamp: Sun May 25 10:46:35 2025
+
+=== Main Window ===
+Window Size: 1400x900
+Window Position: 98, 98
+Is Visible: True
+Is Active: True
+
+=== Character Viewport ===
+OpenGL Available: True
+Native Engine Available: True
+Character Loaded: False
+Animation Playing: False
+Animation Frame: 0
+
+=== Chat Interface ===
+Message Count: 0
+Input Field Enabled: True
+Send Button Enabled: True
+
+=== Control Panel ===
+Happy: 0%
+Sad: 0%
+Angry: 0%
+Surprised: 0%
+Neutral: 20%
+Controls Enabled: True
+
+=== Backend Connection ===
+Backend Connected: False
+Backend URL: http://localhost:8080/api
+

@@ -1,0 +1,425 @@
+/* CharacterCanvas.css */
+.character-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.character-canvas {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  cursor: grab;
+  display: block;
+}
+
+.character-canvas:active {
+  cursor: grabbing;
+}
+
+.canvas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+}
+
+.canvas-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.canvas-loading .spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid #4a90e2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.canvas-loading .loading-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.canvas-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.canvas-error .error-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #ef4444;
+}
+
+.canvas-error .error-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.canvas-error .error-details {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+.canvas-controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.canvas-control-button {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.canvas-control-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.canvas-control-button:active {
+  transform: translateY(0);
+}
+
+.canvas-info {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.canvas-info .info-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.canvas-info .info-line:last-child {
+  margin-bottom: 0;
+}
+
+.canvas-info .info-label {
+  color: rgba(255, 255, 255, 0.6);
+  margin-right: 8px;
+}
+
+.canvas-info .info-value {
+  color: #4a90e2;
+  font-weight: 500;
+}
+
+/* Camera controls */
+.camera-controls {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.camera-control-group {
+  display: flex;
+  gap: 4px;
+}
+
+.camera-control-button {
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.camera-control-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.camera-control-button:active {
+  transform: scale(0.95);
+}
+
+/* Performance indicators */
+.performance-indicators {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.performance-indicator {
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #fff;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  backdrop-filter: blur(10px);
+  min-width: 80px;
+}
+
+.performance-indicator .indicator-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.performance-indicator .indicator-value {
+  font-weight: 600;
+  color: #4a90e2;
+}
+
+.performance-indicator.warning .indicator-value {
+  color: #fbbf24;
+}
+
+.performance-indicator.error .indicator-value {
+  color: #ef4444;
+}
+
+/* Fullscreen mode */
+.character-canvas-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  border-radius: 0;
+}
+
+.character-canvas-container.fullscreen .canvas-controls {
+  top: 24px;
+  right: 24px;
+}
+
+.character-canvas-container.fullscreen .canvas-info {
+  bottom: 24px;
+  left: 24px;
+}
+
+.character-canvas-container.fullscreen .camera-controls {
+  bottom: 24px;
+  right: 24px;
+}
+
+.character-canvas-container.fullscreen .performance-indicators {
+  top: 24px;
+  left: 24px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .canvas-controls {
+    top: 12px;
+    right: 12px;
+    gap: 6px;
+  }
+  
+  .canvas-control-button {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .canvas-info {
+    bottom: 12px;
+    left: 12px;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+  
+  .camera-controls {
+    bottom: 12px;
+    right: 12px;
+  }
+  
+  .camera-control-button {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .performance-indicators {
+    top: 12px;
+    left: 12px;
+  }
+  
+  .performance-indicator {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas-info {
+    display: none;
+  }
+  
+  .performance-indicators {
+    display: none;
+  }
+  
+  .canvas-controls {
+    flex-direction: column;
+  }
+  
+  .camera-controls .camera-control-group {
+    flex-direction: column;
+  }
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.character-canvas-container * {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* WebGL specific styles */
+.webgl-context-lost {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  z-index: 20;
+}
+
+.webgl-context-lost .context-lost-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #ef4444;
+}
+
+.webgl-context-lost .context-lost-message {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.webgl-context-lost .context-lost-button {
+  background: #ef4444;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.webgl-context-lost .context-lost-button:hover {
+  background: #dc2626;
+}

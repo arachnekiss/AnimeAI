@@ -1,0 +1,65 @@
+# AnimeRig AI - Python Dependencies
+# Native desktop application for real-time character animation
+
+# Core GUI Framework
+PyQt6==6.6.1
+PyQt6-Qt6==6.6.1
+
+# Environment Configuration
+python-dotenv==1.0.0
+
+# OpenGL for 3D rendering
+PyOpenGL==3.1.7
+PyOpenGL-accelerate==3.1.7
+
+# Computer Vision and AI/ML
+opencv-python==4.8.1.78
+mediapipe>=0.10.13
+numpy
+scipy
+scikit-image
+
+# Deep Learning
+torch>=2.2.0
+torchvision>=0.17.0
+transformers>=4.35.2
+
+# Image Processing
+Pillow>=10.0.0
+imageio>=2.31.6
+
+# 3D Processing
+trimesh==4.0.5
+pymeshlab==2023.12.post1
+
+# Async and Threading
+asyncio
+aiohttp==3.9.1
+asyncqt==0.8.0
+
+# Networking
+websockets==12.0
+requests==2.31.0
+
+# Data Handling
+pydantic==2.5.0
+dataclasses-json==0.6.2
+
+# Configuration
+pyyaml==6.0.1
+python-dotenv==1.0.0
+
+# Logging and Monitoring
+loguru==0.7.2
+
+# Development Tools
+pytest==7.4.3
+pytest-asyncio==0.21.1
+black==23.11.0
+isort==5.12.0
+mypy==1.7.1
+
+# Optional GPU acceleration
+# Uncomment if CUDA available:
+# torch==2.1.1+cu121 -f https://download.pytorch.org/whl/torch_stable.html
+# torchvision==0.16.1+cu121 -f https://download.pytorch.org/whl/torch_stable.html

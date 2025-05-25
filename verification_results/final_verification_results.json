@@ -1,0 +1,25 @@
+{
+  "automated_tests": {
+    "status": "PASSED",
+    "details": "All 7 tests passed",
+    "success_rate": 100.0,
+    "dependencies": {
+      "python": "3.12.1",
+      "pyqt6": "installed",
+      "cpp_engine": "not_found"
+    }
+  },
+  "performance_tests": {
+    "test_duration": 4.059571027755737,
+    "memory_usage_percent": 32.0,
+    "status": "PASSED"
+  },
+  "integration_tests": {},
+  "summary": {
+    "overall_success_rate": 100.0,
+    "automated_tests_passed": true,
+    "visual_verification_passed": false,
+    "performance_acceptable": true,
+    "timestamp": "2025-05-25T10:46:36.074874"
+  }
+}
